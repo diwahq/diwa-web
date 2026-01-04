@@ -76,16 +76,31 @@ const WaitlistModal = ({ isOpen, onClose }) => {
     e.preventDefault();
     setStatus('loading');
 
-    // Simulate API call
-    setTimeout(() => {
-      setStatus('success');
-      // Reset after 2 seconds and close
-      setTimeout(() => {
-        onClose();
-        setStatus('idle');
-        setEmail('');
-      }, 2000);
-    }, 1500);
+    const formData = new FormData(e.target);
+
+    fetch('/', {
+      method: 'POST',
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        "form-name": "waitlist",
+        "email": email,
+        "role": role
+      }).toString()
+    })
+      .then(() => {
+        setStatus('success');
+        setTimeout(() => {
+          onClose();
+          setStatus('idle');
+          setEmail('');
+          setRole('developer');
+        }, 2000);
+      })
+      .catch((error) => {
+        console.error('Form submission failed:', error);
+        setStatus('error'); // You might want to handle this state in UI
+        setTimeout(() => setStatus('idle'), 3000);
+      });
   };
 
   return (
