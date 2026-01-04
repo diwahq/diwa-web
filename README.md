@@ -1,4 +1,4 @@
-# Diwa Web (v1.0)
+# Diwa (v1.0)
 
 **The official website for the Diwa Ecosystem.**
 Live at: [https://diwa.one](https://diwa.one) (Pending DNS)
