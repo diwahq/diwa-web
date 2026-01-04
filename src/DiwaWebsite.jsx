@@ -8,10 +8,10 @@ const HexagonBackground = () => {
       <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <pattern id="hexagons" width="56" height="100" patternUnits="userSpaceOnUse" patternTransform="scale(2)">
-            <path 
-              d="M28 66L0 50V16L28 0L56 16V50L28 66Z" 
-              fill="none" 
-              stroke="url(#hexGradient)" 
+            <path
+              d="M28 66L0 50V16L28 0L56 16V50L28 66Z"
+              fill="none"
+              stroke="url(#hexGradient)"
               strokeWidth="0.5"
               className="animate-pulse"
             />
@@ -64,8 +64,126 @@ const FloatingNodes = () => {
   );
 };
 
-// Navigation Component
-const Navigation = ({ currentPage, setCurrentPage }) => {
+// Waitlist Modal Component
+const WaitlistModal = ({ isOpen, onClose }) => {
+  const [email, setEmail] = useState('');
+  const [role, setRole] = useState('developer');
+  const [status, setStatus] = useState('idle'); // idle, loading, success
+
+  if (!isOpen) return null;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setStatus('loading');
+
+    // Simulate API call
+    setTimeout(() => {
+      setStatus('success');
+      // Reset after 2 seconds and close
+      setTimeout(() => {
+        onClose();
+        setStatus('idle');
+        setEmail('');
+      }, 2000);
+    }, 1500);
+  };
+
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+      <div className="absolute inset-0 bg-slate-900/80 backdrop-blur-sm transition-opacity" onClick={onClose} />
+
+      <div className="relative w-full max-w-md bg-slate-800 border border-slate-700 rounded-2xl shadow-2xl transform transition-all animate-fade-in">
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 p-2 text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-slate-700/50"
+        >
+          <X className="w-5 h-5" />
+        </button>
+
+        <div className="p-8">
+          {status === 'success' ? (
+            <div className="text-center py-8">
+              <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Check className="w-8 h-8 text-green-500" />
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-2">You're on the list!</h3>
+              <p className="text-slate-400">We'll let you know when DIWA is ready for you.</p>
+            </div>
+          ) : (
+            <>
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-indigo-500/10 rounded-xl mb-4">
+                  <Sparkles className="w-6 h-6 text-indigo-400" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">Join the Waitlist</h3>
+                <p className="text-slate-400">
+                  Be the first to get persistent memory for your AI workflow.
+                </p>
+              </div>
+
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-1.5">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500 transition-all"
+                    placeholder="you@company.com"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="role" className="block text-sm font-medium text-slate-300 mb-1.5">
+                    I am a...
+                  </label>
+                  <select
+                    id="role"
+                    value={role}
+                    onChange={(e) => setRole(e.target.value)}
+                    className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500 transition-all appearance-none"
+                  >
+                    <option value="developer">Developer</option>
+                    <option value="manager">Engineering Manager</option>
+                    <option value="founder">Founder</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={status === 'loading'}
+                  className="w-full py-3.5 bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-indigo-500/25 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                >
+                  {status === 'loading' ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      Adding you...
+                    </>
+                  ) : (
+                    <>
+                      Join Waitlist
+                      <ArrowRight className="w-4 h-4" />
+                    </>
+                  )}
+                </button>
+              </form>
+
+              <p className="text-xs text-center text-slate-500 mt-6">
+                We respect your inbox. No spam, ever.
+              </p>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+const Navigation = ({ currentPage, setCurrentPage, onJoinWaitlist }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -119,7 +237,10 @@ const Navigation = ({ currentPage, setCurrentPage }) => {
               <Github className="w-4 h-4" />
               <span>GitHub</span>
             </a>
-            <button className="px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white text-sm font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:-translate-y-0.5">
+            <button
+              onClick={onJoinWaitlist}
+              className="px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white text-sm font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:-translate-y-0.5"
+            >
               Get Started
             </button>
           </div>
@@ -148,10 +269,10 @@ const Navigation = ({ currentPage, setCurrentPage }) => {
 };
 
 // Hero Section
-const HeroSection = () => {
+const HeroSection = ({ onJoinWaitlist }) => {
   const [typedText, setTypedText] = useState('');
   const fullText = 'docker run -d diwahq/diwa';
-  
+
   useEffect(() => {
     let index = 0;
     const timer = setInterval(() => {
@@ -168,7 +289,7 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
       <FloatingNodes />
-      
+
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-full mb-8 animate-fade-in">
@@ -195,7 +316,10 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            <button className="group flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-semibold rounded-xl transition-all duration-300 shadow-2xl shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:-translate-y-1">
+            <button
+              onClick={onJoinWaitlist}
+              className="group flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-semibold rounded-xl transition-all duration-300 shadow-2xl shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:-translate-y-1"
+            >
               <Play className="w-5 h-5" />
               Get Started Free
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -318,7 +442,7 @@ const SolutionSection = () => {
   return (
     <section className="relative py-24 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/5 to-transparent" />
-      
+
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-500/10 border border-indigo-500/20 rounded-full mb-6">
@@ -464,7 +588,7 @@ const EcosystemTeaser = ({ setCurrentPage }) => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="relative overflow-hidden bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-slate-700/50 rounded-3xl p-8 sm:p-12">
           <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-indigo-500/10 to-amber-500/5 rounded-full blur-3xl" />
-          
+
           <div className="relative">
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -486,7 +610,7 @@ const EcosystemTeaser = ({ setCurrentPage }) => {
             </div>
 
             <div className="text-center">
-              <button 
+              <button
                 onClick={() => setCurrentPage('platform')}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-slate-700/50 hover:bg-slate-700 border border-slate-600 rounded-xl text-white font-medium transition-all duration-300"
               >
@@ -502,7 +626,7 @@ const EcosystemTeaser = ({ setCurrentPage }) => {
 };
 
 // Pricing Preview
-const PricingPreview = ({ setCurrentPage }) => {
+const PricingPreview = ({ setCurrentPage, onJoinWaitlist }) => {
   const tiers = [
     {
       name: 'Community',
@@ -544,25 +668,24 @@ const PricingPreview = ({ setCurrentPage }) => {
           {tiers.map((tier, index) => (
             <div
               key={index}
-              className={`relative p-8 rounded-2xl transition-all duration-300 ${
-                tier.highlighted
-                  ? 'bg-gradient-to-b from-indigo-500/20 to-slate-900 border-2 border-indigo-500/50 scale-105'
-                  : 'bg-slate-800/30 border border-slate-700/50 hover:border-slate-600/50'
-              }`}
+              className={`relative p-8 rounded-2xl transition-all duration-300 ${tier.highlighted
+                ? 'bg-gradient-to-b from-indigo-500/20 to-slate-900 border-2 border-indigo-500/50 scale-105'
+                : 'bg-slate-800/30 border border-slate-700/50 hover:border-slate-600/50'
+                }`}
             >
               {tier.highlighted && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-indigo-500 to-amber-500 rounded-full text-xs font-semibold text-white">
                   POPULAR
                 </div>
               )}
-              
+
               <h3 className="text-xl font-semibold text-white mb-2">{tier.name}</h3>
               <div className="mb-4">
                 <span className="text-4xl font-bold text-white">{tier.price}</span>
                 {tier.period && <span className="text-slate-400">{tier.period}</span>}
               </div>
               <p className="text-slate-400 text-sm mb-6">{tier.description}</p>
-              
+
               <ul className="space-y-3 mb-8">
                 {tier.features.map((feature, i) => (
                   <li key={i} className="flex items-center gap-2 text-sm text-slate-300">
@@ -573,20 +696,20 @@ const PricingPreview = ({ setCurrentPage }) => {
               </ul>
 
               <button
-                className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 ${
-                  tier.highlighted
-                    ? 'bg-gradient-to-r from-indigo-600 to-indigo-500 text-white hover:from-indigo-500 hover:to-indigo-400'
-                    : 'bg-slate-700/50 text-white hover:bg-slate-700'
-                }`}
+                onClick={onJoinWaitlist}
+                className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 ${tier.highlighted
+                  ? 'bg-gradient-to-r from-indigo-600 to-indigo-500 text-white hover:from-indigo-500 hover:to-indigo-400'
+                  : 'bg-slate-700/50 text-white hover:bg-slate-700'
+                  }`}
               >
-                {tier.price === 'Custom' ? 'Contact Sales' : 'Get Started'}
+                {tier.price === 'Custom' ? 'Contact Sales' : 'Join Waitlist'}
               </button>
             </div>
           ))}
         </div>
 
         <div className="text-center mt-8">
-          <button 
+          <button
             onClick={() => setCurrentPage('pricing')}
             className="text-indigo-400 hover:text-indigo-300 font-medium transition-colors"
           >
@@ -599,7 +722,7 @@ const PricingPreview = ({ setCurrentPage }) => {
 };
 
 // CTA Section
-const CTASection = () => {
+const CTASection = ({ onJoinWaitlist }) => {
   return (
     <section className="relative py-24">
       <div className="max-w-4xl mx-auto px-6 text-center">
@@ -614,7 +737,10 @@ const CTASection = () => {
           Join developers who are building smarter with persistent AI context. Get started in under 5 minutes.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button className="group flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-semibold rounded-xl transition-all duration-300 shadow-2xl shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:-translate-y-1">
+          <button
+            onClick={onJoinWaitlist}
+            className="group flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-semibold rounded-xl transition-all duration-300 shadow-2xl shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:-translate-y-1"
+          >
             <Terminal className="w-5 h-5" />
             Get Started Free
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -805,11 +931,10 @@ const PlatformPage = () => {
               {products.map((product, index) => (
                 <div
                   key={index}
-                  className={`relative p-8 rounded-2xl border transition-all duration-300 ${
-                    product.available
-                      ? 'bg-gradient-to-br from-indigo-500/10 to-slate-900 border-indigo-500/30'
-                      : 'bg-slate-800/30 border-slate-700/50'
-                  }`}
+                  className={`relative p-8 rounded-2xl border transition-all duration-300 ${product.available
+                    ? 'bg-gradient-to-br from-indigo-500/10 to-slate-900 border-indigo-500/30'
+                    : 'bg-slate-800/30 border-slate-700/50'
+                    }`}
                 >
                   <div className="flex items-start gap-4">
                     <div className={`p-3 rounded-xl ${product.available ? 'bg-indigo-500/20' : 'bg-slate-700/50'}`}>
@@ -918,25 +1043,24 @@ const PricingPage = () => {
             {tiers.map((tier, index) => (
               <div
                 key={index}
-                className={`relative p-8 rounded-2xl transition-all duration-300 ${
-                  tier.highlighted
-                    ? 'bg-gradient-to-b from-indigo-500/20 to-slate-900 border-2 border-indigo-500/50 scale-105'
-                    : 'bg-slate-800/30 border border-slate-700/50'
-                }`}
+                className={`relative p-8 rounded-2xl transition-all duration-300 ${tier.highlighted
+                  ? 'bg-gradient-to-b from-indigo-500/20 to-slate-900 border-2 border-indigo-500/50 scale-105'
+                  : 'bg-slate-800/30 border border-slate-700/50'
+                  }`}
               >
                 {tier.highlighted && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-indigo-500 to-amber-500 rounded-full text-xs font-semibold text-white">
                     MOST POPULAR
                   </div>
                 )}
-                
+
                 <h3 className="text-2xl font-bold text-white mb-2">{tier.name}</h3>
                 <div className="mb-4">
                   <span className="text-5xl font-bold text-white">{tier.price}</span>
                   {tier.period && <span className="text-slate-400">{tier.period}</span>}
                 </div>
                 <p className="text-slate-400 mb-8">{tier.description}</p>
-                
+
                 <ul className="space-y-3 mb-8">
                   {tier.features.map((feature, i) => (
                     <li key={i} className="flex items-center gap-3">
@@ -953,11 +1077,10 @@ const PricingPage = () => {
                 </ul>
 
                 <button
-                  className={`w-full py-4 rounded-xl font-semibold transition-all duration-300 ${
-                    tier.highlighted
-                      ? 'bg-gradient-to-r from-indigo-600 to-indigo-500 text-white hover:from-indigo-500 hover:to-indigo-400 shadow-lg shadow-indigo-500/25'
-                      : 'bg-slate-700/50 text-white hover:bg-slate-700'
-                  }`}
+                  className={`w-full py-4 rounded-xl font-semibold transition-all duration-300 ${tier.highlighted
+                    ? 'bg-gradient-to-r from-indigo-600 to-indigo-500 text-white hover:from-indigo-500 hover:to-indigo-400 shadow-lg shadow-indigo-500/25'
+                    : 'bg-slate-700/50 text-white hover:bg-slate-700'
+                    }`}
                 >
                   {tier.cta}
                 </button>
@@ -1163,17 +1286,20 @@ const AboutPage = () => {
 };
 
 // ==================== HOME PAGE ====================
-const HomePage = ({ setCurrentPage }) => {
+const HomePage = ({ setCurrentPage, onJoinWaitlist }) => {
   return (
     <>
-      <HeroSection />
+      <HeroSection onJoinWaitlist={onJoinWaitlist} />
       <ProblemSection />
       <SolutionSection />
       <FeaturesSection />
       <UseCasesSection />
       <EcosystemTeaser setCurrentPage={setCurrentPage} />
-      <PricingPreview setCurrentPage={setCurrentPage} />
-      <CTASection />
+      <PricingPreview
+        setCurrentPage={setCurrentPage}
+        onJoinWaitlist={onJoinWaitlist}
+      />
+      <CTASection onJoinWaitlist={onJoinWaitlist} />
     </>
   );
 };
@@ -1181,23 +1307,30 @@ const HomePage = ({ setCurrentPage }) => {
 // ==================== MAIN APP ====================
 export default function DiwaWebsite() {
   const [currentPage, setCurrentPage] = useState('home');
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [currentPage]);
+
+  const openWaitlist = () => setIsWaitlistOpen(true);
 
   const renderPage = () => {
     switch (currentPage) {
       case 'platform':
         return <PlatformPage />;
       case 'pricing':
+        // Pass openWaitlist if PricingPage needs it (assuming checking Home only for now)
         return <PricingPage />;
       case 'enterprise':
         return <EnterprisePage />;
       case 'about':
         return <AboutPage />;
       default:
-        return <HomePage setCurrentPage={setCurrentPage} />;
+        return <HomePage
+          setCurrentPage={setCurrentPage}
+          onJoinWaitlist={openWaitlist}
+        />;
     }
   };
 
@@ -1224,14 +1357,23 @@ export default function DiwaWebsite() {
           animation: blink 1s infinite;
         }
       `}</style>
-      
+
       <HexagonBackground />
-      <Navigation currentPage={currentPage} setCurrentPage={setCurrentPage} />
-      
+      <Navigation
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        onJoinWaitlist={openWaitlist}
+      />
+
+      <WaitlistModal
+        isOpen={isWaitlistOpen}
+        onClose={() => setIsWaitlistOpen(false)}
+      />
+
       <main className="relative z-10">
         {renderPage()}
       </main>
-      
+
       <Footer setCurrentPage={setCurrentPage} />
     </div>
   );
