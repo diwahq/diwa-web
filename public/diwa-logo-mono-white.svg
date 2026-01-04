@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 100" width="380" height="100">
+  <!-- B4 Hexagonal Lattice Icon - Monochrome White -->
+  <g transform="translate(10, 5)">
+    <!-- Hex outer connections -->
+    <line x1="45" y1="10" x2="75" y2="27" stroke="#FFFFFF" stroke-width="2.5" opacity="0.4"/>
+    <line x1="75" y1="27" x2="75" y2="63" stroke="#FFFFFF" stroke-width="2.5" opacity="0.4"/>
+    <line x1="75" y1="63" x2="45" y2="80" stroke="#FFFFFF" stroke-width="2.5" opacity="0.5"/>
+    <line x1="45" y1="80" x2="15" y2="63" stroke="#FFFFFF" stroke-width="2.5" opacity="0.5"/>
+    <line x1="15" y1="63" x2="15" y2="27" stroke="#FFFFFF" stroke-width="2.5" opacity="0.4"/>
+    <line x1="15" y1="27" x2="45" y2="10" stroke="#FFFFFF" stroke-width="2.5" opacity="0.4"/>
+    
+    <!-- Center connections -->
+    <line x1="45" y1="45" x2="45" y2="10" stroke="#FFFFFF" stroke-width="1.5" opacity="0.3"/>
+    <line x1="45" y1="45" x2="75" y2="27" stroke="#FFFFFF" stroke-width="1.5" opacity="0.3"/>
+    <line x1="45" y1="45" x2="75" y2="63" stroke="#FFFFFF" stroke-width="1.5" opacity="0.3"/>
+    <line x1="45" y1="45" x2="45" y2="80" stroke="#FFFFFF" stroke-width="1.5" opacity="0.3"/>
+    <line x1="45" y1="45" x2="15" y2="63" stroke="#FFFFFF" stroke-width="1.5" opacity="0.3"/>
+    <line x1="45" y1="45" x2="15" y2="27" stroke="#FFFFFF" stroke-width="1.5" opacity="0.3"/>
+    
+    <!-- Hex nodes -->
+    <circle cx="45" cy="10" r="6" fill="#FFFFFF" opacity="0.8"/>
+    <circle cx="75" cy="27" r="6" fill="#FFFFFF" opacity="0.8"/>
+    <circle cx="75" cy="63" r="6" fill="#FFFFFF" opacity="0.8"/>
+    <circle cx="45" cy="80" r="6" fill="#FFFFFF" opacity="0.8"/>
+    <circle cx="15" cy="63" r="6" fill="#FFFFFF" opacity="0.8"/>
+    <circle cx="15" cy="27" r="6" fill="#FFFFFF" opacity="0.8"/>
+    
+    <!-- Central core -->
+    <circle cx="45" cy="45" r="12" fill="#FFFFFF"/>
+  </g>
+  
+  <!-- Wordmark -->
+  <text x="115" y="60" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="56" font-weight="700" fill="#FFFFFF" letter-spacing="8">DIWA</text>
+</svg>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" width="200" height="150">
+  <defs>
+    <linearGradient id="goldAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FBBF24"/>
+      <stop offset="100%" style="stop-color:#F59E0B"/>
+    </linearGradient>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Icon centered -->
+  <g transform="translate(55, 10)">
+    <line x1="45" y1="10" x2="75" y2="27" stroke="#4338CA" stroke-width="3" opacity="0.6"/>
+    <line x1="75" y1="27" x2="75" y2="63" stroke="#4338CA" stroke-width="3" opacity="0.6"/>
+    <line x1="75" y1="63" x2="45" y2="80" stroke="#6366F1" stroke-width="3" opacity="0.7"/>
+    <line x1="45" y1="80" x2="15" y2="63" stroke="#6366F1" stroke-width="3" opacity="0.7"/>
+    <line x1="15" y1="63" x2="15" y2="27" stroke="#4338CA" stroke-width="3" opacity="0.6"/>
+    <line x1="15" y1="27" x2="45" y2="10" stroke="#4338CA" stroke-width="3" opacity="0.6"/>
+    <line x1="45" y1="45" x2="45" y2="10" stroke="#818CF8" stroke-width="2" opacity="0.5"/>
+    <line x1="45" y1="45" x2="75" y2="27" stroke="#818CF8" stroke-width="2" opacity="0.5"/>
+    <line x1="45" y1="45" x2="75" y2="63" stroke="#818CF8" stroke-width="2" opacity="0.5"/>
+    <line x1="45" y1="45" x2="45" y2="80" stroke="#818CF8" stroke-width="2" opacity="0.5"/>
+    <line x1="45" y1="45" x2="15" y2="63" stroke="#818CF8" stroke-width="2" opacity="0.5"/>
+    <line x1="45" y1="45" x2="15" y2="27" stroke="#818CF8" stroke-width="2" opacity="0.5"/>
+    <circle cx="45" cy="10" r="6" fill="#6366F1"/>
+    <circle cx="75" cy="27" r="6" fill="#6366F1"/>
+    <circle cx="75" cy="63" r="6" fill="#6366F1"/>
+    <circle cx="45" cy="80" r="6" fill="#6366F1"/>
+    <circle cx="15" cy="63" r="6" fill="#6366F1"/>
+    <circle cx="15" cy="27" r="6" fill="#6366F1"/>
+    <circle cx="45" cy="45" r="12" fill="url(#goldAccent)" filter="url(#glow)"/>
+    <circle cx="45" cy="45" r="6" fill="#FEF3C7"/>
+  </g>
+  
+  <!-- Wordmark below -->
+  <text x="100" y="130" font-family="system-ui, -apple-system, sans-serif" font-size="42" font-weight="700" fill="#F8FAFC" text-anchor="middle" letter-spacing="8">DIWA</text>
+</svg>

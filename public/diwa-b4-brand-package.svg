@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 2400" width="1200" height="2400">
+  <defs>
+    <!-- Brand Colors -->
+    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366F1"/>
+      <stop offset="50%" style="stop-color:#4F46E5"/>
+      <stop offset="100%" style="stop-color:#4338CA"/>
+    </linearGradient>
+    
+    <linearGradient id="goldAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FBBF24"/>
+      <stop offset="100%" style="stop-color:#F59E0B"/>
+    </linearGradient>
+    
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4F46E5"/>
+      <stop offset="100%" style="stop-color:#4338CA"/>
+    </linearGradient>
+    
+    <!-- Glow Effects -->
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="nodeGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="strongGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="2400" fill="#0F172A"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="1200" height="120" fill="#1E293B"/>
+  <text x="600" y="55" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" fill="#F8FAFC" text-anchor="middle" letter-spacing="4">DIWA BRAND PACKAGE</text>
+  <text x="600" y="85" font-family="system-ui, sans-serif" font-size="16" fill="#F59E0B" text-anchor="middle" letter-spacing="2">B4 HEXAGONAL LATTICE — FINAL</text>
+  <text x="600" y="108" font-family="system-ui, sans-serif" font-size="12" fill="#64748B" text-anchor="middle">January 2026 • Version 1.0</text>
+  
+  <!-- ==================== -->
+  <!-- SECTION 1: PRIMARY LOGOS -->
+  <!-- ==================== -->
+  <text x="100" y="170" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#F59E0B">01. PRIMARY LOGO — HORIZONTAL</text>
+  <line x1="100" y1="185" x2="1100" y2="185" stroke="#334155" stroke-width="1"/>
+  
+  <!-- Primary Dark -->
+  <text x="100" y="220" font-family="system-ui, sans-serif" font-size="14" fill="#94A3B8">Dark Background (Primary)</text>
+  
+  <g transform="translate(150, 250)">
+    <g filter="url(#softGlow)">
+      <!-- Hex outer connections -->
+      <line x1="45" y1="10" x2="75" y2="27" stroke="#4338CA" stroke-width="3" opacity="0.6"/>
+      <line x1="75" y1="27" x2="75" y2="63" stroke="#4338CA" stroke-width="3" opacity="0.6"/>
+      <line x1="75" y1="63" x2="45" y2="80" stroke="#6366F1" stroke-width="3" opacity="0.7"/>
+      <line x1="45" y1="80" x2="15" y2="63" stroke="#6366F1" stroke-width="3" opacity="0.7"/>
+      <line x1="15" y1="63" x2="15" y2="27" stroke="#4338CA" stroke-width="3" opacity="0.6"/>
+      <line x1="15" y1="27" x2="45" y2="10" stroke="#4338CA" stroke-width="3" opacity="0.6"/>
+      
+      <!-- Center connections -->
+      <line x1="45" y1="45" x2="45" y2="10" stroke="#818CF8" stroke-width="2" opacity="0.5"/>
+      <line x1="45" y1="45" x2="75" y2="27" stroke="#818CF8" stroke-width="2" opacity="0.5"/>
+      <line x1="45" y1="45" x2="75" y2="63" stroke="#818CF8" stroke-width="2" opacity="0.5"/>
+      <line x1="45" y1="45" x2="45" y2="80" stroke="#818CF8" stroke-width="2" opacity="0.5"/>
+      <line x1="45" y1="45" x2="15" y2="63" stroke="#818CF8" stroke-width="2" opacity="0.5"/>
+      <line x1="45" y1="45" x2="15" y2="27" stroke="#818CF8" stroke-width="2" opacity="0.5"/>
+      
+      <!-- Hex nodes -->
+      <circle cx="45" cy="10" r="7" fill="#6366F1"/>
+      <circle cx="75" cy="27" r="7" fill="#6366F1"/>
+      <circle cx="75" cy="63" r="7" fill="#6366F1"/>
+      <circle cx="45" cy="80" r="7" fill="#6366F1"/>
+      <circle cx="15" cy="63" r="7" fill="#6366F1"/>
+      <circle cx="15" cy="27" r="7" fill="#6366F1"/>
+      
+      <!-- Central core -->
+      <circle cx="45" cy="45" r="14" fill="url(#goldAccent)" filter="url(#nodeGlow)"/>
+      <circle cx="45" cy="45" r="7" fill="#FEF3C7"/>
+    </g>
+    
+    <!-- Wordmark -->
+    <text x="115" y="58" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="56" font-weight="700" fill="#F8FAFC" letter-spacing="8">DIWA</text>
+  </g>
+  
+  <!-- Primary Light -->
+  <text x="550" y="220" font-family="system-ui, sans-serif" font-size="14" fill="#94A3B8">Light Background</text>
+  
+  <rect x="550" y="240" width="400" height="110" rx="12" fill="#FFFFFF"/>
+  
+  <g transform="translate(590, 255)">
+    <g>
+      <!-- Hex outer connections -->
+      <line x1="45" y1="10" x2="75" y2="27" stroke="#C7D2FE" stroke-width="3"/>
+      <line x1="75" y1="27" x2="75" y2="63" stroke="#C7D2FE" stroke-width="3"/>
+      <line x1="75" y1="63" x2="45" y2="80" stroke="#A5B4FC" stroke-width="3"/>
+      <line x1="45" y1="80" x2="15" y2="63" stroke="#A5B4FC" stroke-width="3"/>
+      <line x1="15" y1="63" x2="15" y2="27" stroke="#C7D2FE" stroke-width="3"/>
+      <line x1="15" y1="27" x2="45" y2="10" stroke="#C7D2FE" stroke-width="3"/>
+      
+      <!-- Center connections -->
+      <line x1="45" y1="45" x2="45" y2="10" stroke="#E0E7FF" stroke-width="2"/>
+      <line x1="45" y1="45" x2="75" y2="27" stroke="#E0E7FF" stroke-width="2"/>
+      <line x1="45" y1="45" x2="75" y2="63" stroke="#E0E7FF" stroke-width="2"/>
+      <line x1="45" y1="45" x2="45" y2="80" stroke="#E0E7FF" stroke-width="2"/>
+      <line x1="45" y1="45" x2="15" y2="63" stroke="#E0E7FF" stroke-width="2"/>
+      <line x1="45" y1="45" x2="15" y2="27" stroke="#E0E7FF" stroke-width="2"/>
+      
+      <!-- Hex nodes -->
+      <circle cx="45" cy="10" r="7" fill="#4F46E5"/>
+      <circle cx="75" cy="27" r="7" fill="#4F46E5"/>
+      <circle cx="75" cy="63" r="7" fill="#4F46E5"/>
+      <circle cx="45" cy="80" r="7" fill="#4F46E5"/>
+      <circle cx="15" cy="63" r="7" fill="#4F46E5"/>
+      <circle cx="15" cy="27" r="7" fill="#4F46E5"/>
+      
+      <!-- Central core -->
+      <circle cx="45" cy="45" r="14" fill="#F59E0B"/>
+      <circle cx="45" cy="45" r="7" fill="#FEF3C7"/>
+    </g>
+    
+    <!-- Wordmark -->
+    <text x="115" y="58" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif" font-size="56" font-weight="700" fill="#1E293B" letter-spacing="8">DIWA</text>
+  </g>
+  
+  <!-- ==================== -->
+  <!-- SECTION 2: STACKED LOGO -->
+  <!-- ==================== -->
+  <text x="100" y="410" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#F59E0B">02. STACKED LOGO</text>
+  <line x1="100" y1="425" x2="1100" y2="425" stroke="#334155" stroke-width="1"/>
+  
+  <!-- Stacked Dark -->
+  <text x="100" y="460" font-family="system-ui, sans-serif" font-size="14" fill="#94A3B8">Dark Background</text>
+  
+  <g transform="translate(150, 480)">
+    <!-- Icon centered -->
+    <g transform="translate(55, 0)" filter="url(#softGlow)">
+      <line x1="45" y1="10" x2="75" y2="27" stroke="#4338CA" stroke-width="3" opacity="0.6"/>
+      <line x1="75" y1="27" x2="75" y2="63" stroke="#4338CA" stroke-width="3" opacity="0.6"/>
+      <line x1="75" y1="63" x2="45" y2="80" stroke="#6366F1" stroke-width="3" opacity="0.7"/>
+      <line x1="45" y1="80" x2="15" y2="63" stroke="#6366F1" stroke-width="3" opacity="0.7"/>
+      <line x1="15" y1="63" x2="15" y2="27" stroke="#4338CA" stroke-width="3" opacity="0.6"/>
+      <line x1="15" y1="27" x2="45" y2="10" stroke="#4338CA" stroke-width="3" opacity="0.6"/>
+      <line x1="45" y1="45" x2="45" y2="10" stroke="#818CF8" stroke-width="2" opacity="0.5"/>
+      <line x1="45" y1="45" x2="75" y2="27" stroke="#818CF8" stroke-width="2" opacity="0.5"/>
+      <line x1="45" y1="45" x2="75" y2="63" stroke="#818CF8" stroke-width="2" opacity="0.5"/>
+      <line x1="45" y1="45" x2="45" y2="80" stroke="#818CF8" stroke-width="2" opacity="0.5"/>
+      <line x1="45" y1="45" x2="15" y2="63" stroke="#818CF8" stroke-width="2" opacity="0.5"/>
+      <line x1="45" y1="45" x2="15" y2="27" stroke="#818CF8" stroke-width="2" opacity="0.5"/>
+      <circle cx="45" cy="10" r="6" fill="#6366F1"/>
+      <circle cx="75" cy="27" r="6" fill="#6366F1"/>
+      <circle cx="75" cy="63" r="6" fill="#6366F1"/>
+      <circle cx="45" cy="80" r="6" fill="#6366F1"/>
+      <circle cx="15" cy="63" r="6" fill="#6366F1"/>
+      <circle cx="15" cy="27" r="6" fill="#6366F1"/>
+      <circle cx="45" cy="45" r="12" fill="url(#goldAccent)" filter="url(#nodeGlow)"/>
+      <circle cx="45" cy="45" r="6" fill="#FEF3C7"/>
+    </g>
+    <!-- Wordmark below -->
+    <text x="100" y="115" font-family="system-ui, -apple-system, sans-serif" font-size="42" font-weight="700" fill="#F8FAFC" text-anchor="middle" letter-spacing="8">DIWA</text>
+  </g>
+  
+  <!-- Stacked Light -->
+  <rect x="400" y="470" width="220" height="160" rx="12" fill="#FFFFFF"/>
+  
+  <g transform="translate(445, 485)">
+    <g transform="translate(20, 0)">
+      <line x1="45" y1="10" x2="75" y2="27" stroke="#C7D2FE" stroke-width="3"/>
+      <line x1="75" y1="27" x2="75" y2="63" stroke="#C7D2FE" stroke-width="3"/>
+      <line x1="75" y1="63" x2="45" y2="80" stroke="#A5B4FC" stroke-width="3"/>
+      <line x1="45" y1="80" x2="15" y2="63" stroke="#A5B4FC" stroke-width="3"/>
+      <line x1="15" y1="63" x2="15" y2="27" stroke="#C7D2FE" stroke-width="3"/>
+      <line x1="15" y1="27" x2="45" y2="10" stroke="#C7D2FE" stroke-width="3"/>
+      <line x1="45" y1="45" x2="45" y2="10" stroke="#E0E7FF" stroke-width="2"/>
+      <line x1="45" y1="45" x2="75" y2="27" stroke="#E0E7FF" stroke-width="2"/>
+      <line x1="45" y1="45" x2="75" y2="63" stroke="#E0E7FF" stroke-width="2"/>
+      <line x1="45" y1="45" x2="45" y2="80" stroke="#E0E7FF" stroke-width="2"/>
+      <line x1="45" y1="45" x2="15" y2="63" stroke="#E0E7FF" stroke-width="2"/>
+      <line x1="45" y1="45" x2="15" y2="27" stroke="#E0E7FF" stroke-width="2"/>
+      <circle cx="45" cy="10" r="6" fill="#4F46E5"/>
+      <circle cx="75" cy="27" r="6" fill="#4F46E5"/>
+      <circle cx="75" cy="63" r="6" fill="#4F46E5"/>
+      <circle cx="45" cy="80" r="6" fill="#4F46E5"/>
+      <circle cx="15" cy="63" r="6" fill="#4F46E5"/>
+      <circle cx="15" cy="27" r="6" fill="#4F46E5"/>
+      <circle cx="45" cy="45" r="12" fill="#F59E0B"/>
+      <circle cx="45" cy="45" r="6" fill="#FEF3C7"/>
+    </g>
+    <text x="65" y="115" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="700" fill="#1E293B" text-anchor="middle" letter-spacing="6">DIWA</text>
+  </g>
+  
+  <!-- ==================== -->
+  <!-- SECTION 3: ICON ONLY -->
+  <!-- ==================== -->
+  <text x="700" y="460" font-family="system-ui, sans-serif" font-size="14" fill="#94A3B8">Icon Only (Transparent)</text>
+  
+  <g transform="translate(750, 490)">
+    <g filter="url(#softGlow)">
+      <line x1="50" y1="10" x2="90" y2="33" stroke="#4338CA" stroke-width="4" opacity="0.6"/>
+      <line x1="90" y1="33" x2="90" y2="77" stroke="#4338CA" stroke-width="4" opacity="0.6"/>
+      <line x1="90" y1="77" x2="50" y2="100" stroke="#6366F1" stroke-width="4" opacity="0.7"/>
+      <line x1="50" y1="100" x2="10" y2="77" stroke="#6366F1" stroke-width="4" opacity="0.7"/>
+      <line x1="10" y1="77" x2="10" y2="33" stroke="#4338CA" stroke-width="4" opacity="0.6"/>
+      <line x1="10" y1="33" x2="50" y2="10" stroke="#4338CA" stroke-width="4" opacity="0.6"/>
+      <line x1="50" y1="55" x2="50" y2="10" stroke="#818CF8" stroke-width="2.5" opacity="0.5"/>
+      <line x1="50" y1="55" x2="90" y2="33" stroke="#818CF8" stroke-width="2.5" opacity="0.5"/>
+      <line x1="50" y1="55" x2="90" y2="77" stroke="#818CF8" stroke-width="2.5" opacity="0.5"/>
+      <line x1="50" y1="55" x2="50" y2="100" stroke="#818CF8" stroke-width="2.5" opacity="0.5"/>
+      <line x1="50" y1="55" x2="10" y2="77" stroke="#818CF8" stroke-width="2.5" opacity="0.5"/>
+      <line x1="50" y1="55" x2="10" y2="33" stroke="#818CF8" stroke-width="2.5" opacity="0.5"/>
+      <circle cx="50" cy="10" r="9" fill="#6366F1"/>
+      <circle cx="90" cy="33" r="9" fill="#6366F1"/>
+      <circle cx="90" cy="77" r="9" fill="#6366F1"/>
+      <circle cx="50" cy="100" r="9" fill="#6366F1"/>
+      <circle cx="10" cy="77" r="9" fill="#6366F1"/>
+      <circle cx="10" cy="33" r="9" fill="#6366F1"/>
+      <circle cx="50" cy="55" r="18" fill="url(#goldAccent)" filter="url(#nodeGlow)"/>
+      <circle cx="50" cy="55" r="9" fill="#FEF3C7"/>
+    </g>
+  </g>
+  
+  <!-- ==================== -->
+  <!-- SECTION 4: MONOCHROME -->
+  <!-- ==================== -->
+  <text x="100" y="680" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#F59E0B">03. MONOCHROME VERSIONS</text>
+  <line x1="100" y1="695" x2="1100" y2="695" stroke="#334155" stroke-width="1"/>
+  
+  <!-- White Mono -->
+  <text x="100" y="730" font-family="system-ui, sans-serif" font-size="14" fill="#94A3B8">White (for dark/colored backgrounds)</text>
+  
+  <g transform="translate(150, 760)">
+    <g>
+      <line x1="45" y1="10" x2="75" y2="27" stroke="#FFFFFF" stroke-width="2.5" opacity="0.4"/>
+      <line x1="75" y1="27" x2="75" y2="63" stroke="#FFFFFF" stroke-width="2.5" opacity="0.4"/>
+      <line x1="75" y1="63" x2="45" y2="80" stroke="#FFFFFF" stroke-width="2.5" opacity="0.5"/>
+      <line x1="45" y1="80" x2="15" y2="63" stroke="#FFFFFF" stroke-width="2.5" opacity="0.5"/>
+      <line x1="15" y1="63" x2="15" y2="27" stroke="#FFFFFF" stroke-width="2.5" opacity="0.4"/>
+      <line x1="15" y1="27" x2="45" y2="10" stroke="#FFFFFF" stroke-width="2.5" opacity="0.4"/>
+      <line x1="45" y1="45" x2="45" y2="10" stroke="#FFFFFF" stroke-width="1.5" opacity="0.3"/>
+      <line x1="45" y1="45" x2="75" y2="27" stroke="#FFFFFF" stroke-width="1.5" opacity="0.3"/>
+      <line x1="45" y1="45" x2="75" y2="63" stroke="#FFFFFF" stroke-width="1.5" opacity="0.3"/>
+      <line x1="45" y1="45" x2="45" y2="80" stroke="#FFFFFF" stroke-width="1.5" opacity="0.3"/>
+      <line x1="45" y1="45" x2="15" y2="63" stroke="#FFFFFF" stroke-width="1.5" opacity="0.3"/>
+      <line x1="45" y1="45" x2="15" y2="27" stroke="#FFFFFF" stroke-width="1.5" opacity="0.3"/>
+      <circle cx="45" cy="10" r="6" fill="#FFFFFF" opacity="0.8"/>
+      <circle cx="75" cy="27" r="6" fill="#FFFFFF" opacity="0.8"/>
+      <circle cx="75" cy="63" r="6" fill="#FFFFFF" opacity="0.8"/>
+      <circle cx="45" cy="80" r="6" fill="#FFFFFF" opacity="0.8"/>
+      <circle cx="15" cy="63" r="6" fill="#FFFFFF" opacity="0.8"/>
+      <circle cx="15" cy="27" r="6" fill="#FFFFFF" opacity="0.8"/>
+      <circle cx="45" cy="45" r="12" fill="#FFFFFF"/>
+    </g>
+    <text x="115" y="58" font-family="system-ui, -apple-system, sans-serif" font-size="56" font-weight="700" fill="#FFFFFF" letter-spacing="8">DIWA</text>
+  </g>
+  
+  <!-- Black Mono -->
+  <text x="550" y="730" font-family="system-ui, sans-serif" font-size="14" fill="#94A3B8">Black (for light backgrounds)</text>
+  
+  <rect x="550" y="750" width="400" height="110" rx="12" fill="#FFFFFF"/>
+  
+  <g transform="translate(590, 765)">
+    <g>
+      <line x1="45" y1="10" x2="75" y2="27" stroke="#1E293B" stroke-width="2.5" opacity="0.3"/>
+      <line x1="75" y1="27" x2="75" y2="63" stroke="#1E293B" stroke-width="2.5" opacity="0.3"/>
+      <line x1="75" y1="63" x2="45" y2="80" stroke="#1E293B" stroke-width="2.5" opacity="0.4"/>
+      <line x1="45" y1="80" x2="15" y2="63" stroke="#1E293B" stroke-width="2.5" opacity="0.4"/>
+      <line x1="15" y1="63" x2="15" y2="27" stroke="#1E293B" stroke-width="2.5" opacity="0.3"/>
+      <line x1="15" y1="27" x2="45" y2="10" stroke="#1E293B" stroke-width="2.5" opacity="0.3"/>
+      <line x1="45" y1="45" x2="45" y2="10" stroke="#1E293B" stroke-width="1.5" opacity="0.2"/>
+      <line x1="45" y1="45" x2="75" y2="27" stroke="#1E293B" stroke-width="1.5" opacity="0.2"/>
+      <line x1="45" y1="45" x2="75" y2="63" stroke="#1E293B" stroke-width="1.5" opacity="0.2"/>
+      <line x1="45" y1="45" x2="45" y2="80" stroke="#1E293B" stroke-width="1.5" opacity="0.2"/>
+      <line x1="45" y1="45" x2="15" y2="63" stroke="#1E293B" stroke-width="1.5" opacity="0.2"/>
+      <line x1="45" y1="45" x2="15" y2="27" stroke="#1E293B" stroke-width="1.5" opacity="0.2"/>
+      <circle cx="45" cy="10" r="6" fill="#1E293B" opacity="0.6"/>
+      <circle cx="75" cy="27" r="6" fill="#1E293B" opacity="0.6"/>
+      <circle cx="75" cy="63" r="6" fill="#1E293B" opacity="0.6"/>
+      <circle cx="45" cy="80" r="6" fill="#1E293B" opacity="0.6"/>
+      <circle cx="15" cy="63" r="6" fill="#1E293B" opacity="0.6"/>
+      <circle cx="15" cy="27" r="6" fill="#1E293B" opacity="0.6"/>
+      <circle cx="45" cy="45" r="12" fill="#1E293B"/>
+    </g>
+    <text x="115" y="58" font-family="system-ui, -apple-system, sans-serif" font-size="56" font-weight="700" fill="#1E293B" letter-spacing="8">DIWA</text>
+  </g>
+  
+  <!-- ==================== -->
+  <!-- SECTION 5: TAGLINE LOCKUP -->
+  <!-- ==================== -->
+  <text x="100" y="920" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#F59E0B">04. TAGLINE LOCKUP</text>
+  <line x1="100" y1="935" x2="1100" y2="935" stroke="#334155" stroke-width="1"/>
+  
+  <g transform="translate(150, 970)">
+    <g filter="url(#softGlow)">
+      <line x1="40" y1="8" x2="65" y2="22" stroke="#4338CA" stroke-width="2.5" opacity="0.6"/>
+      <line x1="65" y1="22" x2="65" y2="52" stroke="#4338CA" stroke-width="2.5" opacity="0.6"/>
+      <line x1="65" y1="52" x2="40" y2="66" stroke="#6366F1" stroke-width="2.5" opacity="0.7"/>
+      <line x1="40" y1="66" x2="15" y2="52" stroke="#6366F1" stroke-width="2.5" opacity="0.7"/>
+      <line x1="15" y1="52" x2="15" y2="22" stroke="#4338CA" stroke-width="2.5" opacity="0.6"/>
+      <line x1="15" y1="22" x2="40" y2="8" stroke="#4338CA" stroke-width="2.5" opacity="0.6"/>
+      <line x1="40" y1="37" x2="40" y2="8" stroke="#818CF8" stroke-width="1.5" opacity="0.5"/>
+      <line x1="40" y1="37" x2="65" y2="22" stroke="#818CF8" stroke-width="1.5" opacity="0.5"/>
+      <line x1="40" y1="37" x2="65" y2="52" stroke="#818CF8" stroke-width="1.5" opacity="0.5"/>
+      <line x1="40" y1="37" x2="40" y2="66" stroke="#818CF8" stroke-width="1.5" opacity="0.5"/>
+      <line x1="40" y1="37" x2="15" y2="52" stroke="#818CF8" stroke-width="1.5" opacity="0.5"/>
+      <line x1="40" y1="37" x2="15" y2="22" stroke="#818CF8" stroke-width="1.5" opacity="0.5"/>
+      <circle cx="40" cy="8" r="5" fill="#6366F1"/>
+      <circle cx="65" cy="22" r="5" fill="#6366F1"/>
+      <circle cx="65" cy="52" r="5" fill="#6366F1"/>
+      <circle cx="40" cy="66" r="5" fill="#6366F1"/>
+      <circle cx="15" cy="52" r="5" fill="#6366F1"/>
+      <circle cx="15" cy="22" r="5" fill="#6366F1"/>
+      <circle cx="40" cy="37" r="10" fill="url(#goldAccent)" filter="url(#nodeGlow)"/>
+      <circle cx="40" cy="37" r="5" fill="#FEF3C7"/>
+    </g>
+    <text x="95" y="32" font-family="system-ui, -apple-system, sans-serif" font-size="42" font-weight="700" fill="#F8FAFC" letter-spacing="6">DIWA</text>
+    <text x="95" y="55" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#94A3B8" letter-spacing="2">AI MEMORY FOR DEV TEAMS</text>
+  </g>
+  
+  <!-- Alternative Tagline -->
+  <g transform="translate(550, 970)">
+    <g filter="url(#softGlow)">
+      <line x1="40" y1="8" x2="65" y2="22" stroke="#4338CA" stroke-width="2.5" opacity="0.6"/>
+      <line x1="65" y1="22" x2="65" y2="52" stroke="#4338CA" stroke-width="2.5" opacity="0.6"/>
+      <line x1="65" y1="52" x2="40" y2="66" stroke="#6366F1" stroke-width="2.5" opacity="0.7"/>
+      <line x1="40" y1="66" x2="15" y2="52" stroke="#6366F1" stroke-width="2.5" opacity="0.7"/>
+      <line x1="15" y1="52" x2="15" y2="22" stroke="#4338CA" stroke-width="2.5" opacity="0.6"/>
+      <line x1="15" y1="22" x2="40" y2="8" stroke="#4338CA" stroke-width="2.5" opacity="0.6"/>
+      <line x1="40" y1="37" x2="40" y2="8" stroke="#818CF8" stroke-width="1.5" opacity="0.5"/>
+      <line x1="40" y1="37" x2="65" y2="22" stroke="#818CF8" stroke-width="1.5" opacity="0.5"/>
+      <line x1="40" y1="37" x2="65" y2="52" stroke="#818CF8" stroke-width="1.5" opacity="0.5"/>
+      <line x1="40" y1="37" x2="40" y2="66" stroke="#818CF8" stroke-width="1.5" opacity="0.5"/>
+      <line x1="40" y1="37" x2="15" y2="52" stroke="#818CF8" stroke-width="1.5" opacity="0.5"/>
+      <line x1="40" y1="37" x2="15" y2="22" stroke="#818CF8" stroke-width="1.5" opacity="0.5"/>
+      <circle cx="40" cy="8" r="5" fill="#6366F1"/>
+      <circle cx="65" cy="22" r="5" fill="#6366F1"/>
+      <circle cx="65" cy="52" r="5" fill="#6366F1"/>
+      <circle cx="40" cy="66" r="5" fill="#6366F1"/>
+      <circle cx="15" cy="52" r="5" fill="#6366F1"/>
+      <circle cx="15" cy="22" r="5" fill="#6366F1"/>
+      <circle cx="40" cy="37" r="10" fill="url(#goldAccent)" filter="url(#nodeGlow)"/>
+      <circle cx="40" cy="37" r="5" fill="#FEF3C7"/>
+    </g>
+    <text x="95" y="32" font-family="system-ui, -apple-system, sans-serif" font-size="42" font-weight="700" fill="#F8FAFC" letter-spacing="6">DIWA</text>
+    <text x="95" y="55" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#94A3B8" letter-spacing="2">CONTEXT THAT NEVER FORGETS</text>
+  </g>
+  
+  <!-- ==================== -->
+  <!-- SECTION 6: APP ICONS -->
+  <!-- ==================== -->
+  <text x="100" y="1100" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#F59E0B">05. APP ICONS &amp; FAVICONS</text>
+  <line x1="100" y1="1115" x2="1100" y2="1115" stroke="#334155" stroke-width="1"/>
+  
+  <!-- 512x512 -->
+  <text x="100" y="1150" font-family="system-ui, sans-serif" font-size="14" fill="#94A3B8">512×512 (App Store)</text>
+  
+  <rect x="100" y="1170" width="150" height="150" rx="30" fill="url(#bgGradient)"/>
+  <g transform="translate(125, 1195)">
+    <line x1="50" y1="10" x2="85" y2="30" stroke="#818CF8" stroke-width="5" opacity="0.5"/>
+    <line x1="85" y1="30" x2="85" y2="70" stroke="#818CF8" stroke-width="5" opacity="0.5"/>
+    <line x1="85" y1="70" x2="50" y2="90" stroke="#A5B4FC" stroke-width="5" opacity="0.6"/>
+    <line x1="50" y1="90" x2="15" y2="70" stroke="#A5B4FC" stroke-width="5" opacity="0.6"/>
+    <line x1="15" y1="70" x2="15" y2="30" stroke="#818CF8" stroke-width="5" opacity="0.5"/>
+    <line x1="15" y1="30" x2="50" y2="10" stroke="#818CF8" stroke-width="5" opacity="0.5"/>
+    <line x1="50" y1="50" x2="50" y2="10" stroke="#C7D2FE" stroke-width="3" opacity="0.4"/>
+    <line x1="50" y1="50" x2="85" y2="30" stroke="#C7D2FE" stroke-width="3" opacity="0.4"/>
+    <line x1="50" y1="50" x2="85" y2="70" stroke="#C7D2FE" stroke-width="3" opacity="0.4"/>
+    <line x1="50" y1="50" x2="50" y2="90" stroke="#C7D2FE" stroke-width="3" opacity="0.4"/>
+    <line x1="50" y1="50" x2="15" y2="70" stroke="#C7D2FE" stroke-width="3" opacity="0.4"/>
+    <line x1="50" y1="50" x2="15" y2="30" stroke="#C7D2FE" stroke-width="3" opacity="0.4"/>
+    <circle cx="50" cy="10" r="8" fill="#A5B4FC"/>
+    <circle cx="85" cy="30" r="8" fill="#A5B4FC"/>
+    <circle cx="85" cy="70" r="8" fill="#A5B4FC"/>
+    <circle cx="50" cy="90" r="8" fill="#A5B4FC"/>
+    <circle cx="15" cy="70" r="8" fill="#A5B4FC"/>
+    <circle cx="15" cy="30" r="8" fill="#A5B4FC"/>
+    <circle cx="50" cy="50" r="16" fill="url(#goldAccent)" filter="url(#nodeGlow)"/>
+    <circle cx="50" cy="50" r="8" fill="#FEF3C7"/>
+  </g>
+  
+  <!-- 256x256 -->
+  <text x="300" y="1150" font-family="system-ui, sans-serif" font-size="14" fill="#94A3B8">256×256</text>
+  
+  <rect x="300" y="1180" width="110" height="110" rx="22" fill="url(#bgGradient)"/>
+  <g transform="translate(318, 1198)">
+    <line x1="37" y1="8" x2="62" y2="22" stroke="#818CF8" stroke-width="4" opacity="0.5"/>
+    <line x1="62" y1="22" x2="62" y2="52" stroke="#818CF8" stroke-width="4" opacity="0.5"/>
+    <line x1="62" y1="52" x2="37" y2="66" stroke="#A5B4FC" stroke-width="4" opacity="0.6"/>
+    <line x1="37" y1="66" x2="12" y2="52" stroke="#A5B4FC" stroke-width="4" opacity="0.6"/>
+    <line x1="12" y1="52" x2="12" y2="22" stroke="#818CF8" stroke-width="4" opacity="0.5"/>
+    <line x1="12" y1="22" x2="37" y2="8" stroke="#818CF8" stroke-width="4" opacity="0.5"/>
+    <circle cx="37" cy="8" r="6" fill="#A5B4FC"/>
+    <circle cx="62" cy="22" r="6" fill="#A5B4FC"/>
+    <circle cx="62" cy="52" r="6" fill="#A5B4FC"/>
+    <circle cx="37" cy="66" r="6" fill="#A5B4FC"/>
+    <circle cx="12" cy="52" r="6" fill="#A5B4FC"/>
+    <circle cx="12" cy="22" r="6" fill="#A5B4FC"/>
+    <circle cx="37" cy="37" r="12" fill="url(#goldAccent)"/>
+    <circle cx="37" cy="37" r="6" fill="#FEF3C7"/>
+  </g>
+  
+  <!-- 128x128 -->
+  <text x="460" y="1150" font-family="system-ui, sans-serif" font-size="14" fill="#94A3B8">128×128</text>
+  
+  <rect x="460" y="1200" width="80" height="80" rx="16" fill="url(#bgGradient)"/>
+  <g transform="translate(475, 1215)">
+    <line x1="25" y1="5" x2="42" y2="15" stroke="#818CF8" stroke-width="3" opacity="0.5"/>
+    <line x1="42" y1="15" x2="42" y2="35" stroke="#818CF8" stroke-width="3" opacity="0.5"/>
+    <line x1="42" y1="35" x2="25" y2="45" stroke="#A5B4FC" stroke-width="3" opacity="0.6"/>
+    <line x1="25" y1="45" x2="8" y2="35" stroke="#A5B4FC" stroke-width="3" opacity="0.6"/>
+    <line x1="8" y1="35" x2="8" y2="15" stroke="#818CF8" stroke-width="3" opacity="0.5"/>
+    <line x1="8" y1="15" x2="25" y2="5" stroke="#818CF8" stroke-width="3" opacity="0.5"/>
+    <circle cx="25" cy="5" r="4" fill="#A5B4FC"/>
+    <circle cx="42" cy="15" r="4" fill="#A5B4FC"/>
+    <circle cx="42" cy="35" r="4" fill="#A5B4FC"/>
+    <circle cx="25" cy="45" r="4" fill="#A5B4FC"/>
+    <circle cx="8" cy="35" r="4" fill="#A5B4FC"/>
+    <circle cx="8" cy="15" r="4" fill="#A5B4FC"/>
+    <circle cx="25" cy="25" r="8" fill="#F59E0B"/>
+    <circle cx="25" cy="25" r="4" fill="#FEF3C7"/>
+  </g>
+  
+  <!-- 64x64 Favicon -->
+  <text x="590" y="1150" font-family="system-ui, sans-serif" font-size="14" fill="#94A3B8">64×64 (Favicon)</text>
+  
+  <rect x="590" y="1220" width="64" height="64" rx="14" fill="url(#bgGradient)"/>
+  <g transform="translate(602, 1232)">
+    <line x1="20" y1="4" x2="34" y2="12" stroke="#A5B4FC" stroke-width="2.5" opacity="0.6"/>
+    <line x1="34" y1="12" x2="34" y2="28" stroke="#A5B4FC" stroke-width="2.5" opacity="0.6"/>
+    <line x1="34" y1="28" x2="20" y2="36" stroke="#C7D2FE" stroke-width="2.5" opacity="0.7"/>
+    <line x1="20" y1="36" x2="6" y2="28" stroke="#C7D2FE" stroke-width="2.5" opacity="0.7"/>
+    <line x1="6" y1="28" x2="6" y2="12" stroke="#A5B4FC" stroke-width="2.5" opacity="0.6"/>
+    <line x1="6" y1="12" x2="20" y2="4" stroke="#A5B4FC" stroke-width="2.5" opacity="0.6"/>
+    <circle cx="20" cy="4" r="3" fill="#C7D2FE"/>
+    <circle cx="34" cy="12" r="3" fill="#C7D2FE"/>
+    <circle cx="34" cy="28" r="3" fill="#C7D2FE"/>
+    <circle cx="20" cy="36" r="3" fill="#C7D2FE"/>
+    <circle cx="6" cy="28" r="3" fill="#C7D2FE"/>
+    <circle cx="6" cy="12" r="3" fill="#C7D2FE"/>
+    <circle cx="20" cy="20" r="7" fill="#F59E0B"/>
+    <circle cx="20" cy="20" r="3" fill="#FEF3C7"/>
+  </g>
+  
+  <!-- 32x32 -->
+  <text x="700" y="1150" font-family="system-ui, sans-serif" font-size="14" fill="#94A3B8">32×32</text>
+  
+  <rect x="700" y="1235" width="48" height="48" rx="10" fill="url(#bgGradient)"/>
+  <g transform="translate(710, 1245)">
+    <polygon points="14,2 24,8 24,20 14,26 4,20 4,8" fill="none" stroke="#A5B4FC" stroke-width="2"/>
+    <circle cx="14" cy="14" r="5" fill="#F59E0B"/>
+    <circle cx="14" cy="14" r="2" fill="#FEF3C7"/>
+  </g>
+  
+  <!-- 16x16 -->
+  <text x="790" y="1150" font-family="system-ui, sans-serif" font-size="14" fill="#94A3B8">16×16</text>
+  
+  <rect x="790" y="1250" width="32" height="32" rx="6" fill="url(#bgGradient)"/>
+  <g transform="translate(798, 1258)">
+    <polygon points="8,1 14,5 14,11 8,15 2,11 2,5" fill="none" stroke="#A5B4FC" stroke-width="1.5"/>
+    <circle cx="8" cy="8" r="3" fill="#F59E0B"/>
+  </g>
+  
+  <!-- ==================== -->
+  <!-- SECTION 7: COLOR PALETTE -->
+  <!-- ==================== -->
+  <text x="100" y="1380" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#F59E0B">06. COLOR PALETTE</text>
+  <line x1="100" y1="1395" x2="1100" y2="1395" stroke="#334155" stroke-width="1"/>
+  
+  <!-- Primary Colors -->
+  <text x="100" y="1430" font-family="system-ui, sans-serif" font-size="14" fill="#94A3B8">Primary (Indigo)</text>
+  
+  <rect x="100" y="1450" width="100" height="60" rx="8" fill="#4F46E5"/>
+  <text x="150" y="1530" font-family="monospace" font-size="11" fill="#94A3B8" text-anchor="middle">Primary</text>
+  <text x="150" y="1545" font-family="monospace" font-size="10" fill="#64748B" text-anchor="middle">#4F46E5</text>
+  
+  <rect x="220" y="1450" width="100" height="60" rx="8" fill="#6366F1"/>
+  <text x="270" y="1530" font-family="monospace" font-size="11" fill="#94A3B8" text-anchor="middle">Light</text>
+  <text x="270" y="1545" font-family="monospace" font-size="10" fill="#64748B" text-anchor="middle">#6366F1</text>
+  
+  <rect x="340" y="1450" width="100" height="60" rx="8" fill="#4338CA"/>
+  <text x="390" y="1530" font-family="monospace" font-size="11" fill="#94A3B8" text-anchor="middle">Dark</text>
+  <text x="390" y="1545" font-family="monospace" font-size="10" fill="#64748B" text-anchor="middle">#4338CA</text>
+  
+  <rect x="460" y="1450" width="100" height="60" rx="8" fill="#818CF8"/>
+  <text x="510" y="1530" font-family="monospace" font-size="11" fill="#94A3B8" text-anchor="middle">Node</text>
+  <text x="510" y="1545" font-family="monospace" font-size="10" fill="#64748B" text-anchor="middle">#818CF8</text>
+  
+  <rect x="580" y="1450" width="100" height="60" rx="8" fill="#A5B4FC"/>
+  <text x="630" y="1530" font-family="monospace" font-size="11" fill="#94A3B8" text-anchor="middle">Connection</text>
+  <text x="630" y="1545" font-family="monospace" font-size="10" fill="#64748B" text-anchor="middle">#A5B4FC</text>
+  
+  <rect x="700" y="1450" width="100" height="60" rx="8" fill="#C7D2FE"/>
+  <text x="750" y="1530" font-family="monospace" font-size="11" fill="#94A3B8" text-anchor="middle">Subtle</text>
+  <text x="750" y="1545" font-family="monospace" font-size="10" fill="#64748B" text-anchor="middle">#C7D2FE</text>
+  
+  <!-- Accent Colors -->
+  <text x="100" y="1590" font-family="system-ui, sans-serif" font-size="14" fill="#94A3B8">Accent (Gold — Soul/Core)</text>
+  
+  <rect x="100" y="1610" width="100" height="60" rx="8" fill="#F59E0B"/>
+  <text x="150" y="1690" font-family="monospace" font-size="11" fill="#94A3B8" text-anchor="middle">Gold</text>
+  <text x="150" y="1705" font-family="monospace" font-size="10" fill="#64748B" text-anchor="middle">#F59E0B</text>
+  
+  <rect x="220" y="1610" width="100" height="60" rx="8" fill="#FBBF24"/>
+  <text x="270" y="1690" font-family="monospace" font-size="11" fill="#94A3B8" text-anchor="middle">Gold Light</text>
+  <text x="270" y="1705" font-family="monospace" font-size="10" fill="#64748B" text-anchor="middle">#FBBF24</text>
+  
+  <rect x="340" y="1610" width="100" height="60" rx="8" fill="#FEF3C7"/>
+  <text x="390" y="1690" font-family="monospace" font-size="11" fill="#94A3B8" text-anchor="middle">Core Glow</text>
+  <text x="390" y="1705" font-family="monospace" font-size="10" fill="#64748B" text-anchor="middle">#FEF3C7</text>
+  
+  <!-- Background Colors -->
+  <text x="500" y="1590" font-family="system-ui, sans-serif" font-size="14" fill="#94A3B8">Backgrounds</text>
+  
+  <rect x="500" y="1610" width="100" height="60" rx="8" fill="#0F172A" stroke="#334155" stroke-width="1"/>
+  <text x="550" y="1690" font-family="monospace" font-size="11" fill="#94A3B8" text-anchor="middle">Dark BG</text>
+  <text x="550" y="1705" font-family="monospace" font-size="10" fill="#64748B" text-anchor="middle">#0F172A</text>
+  
+  <rect x="620" y="1610" width="100" height="60" rx="8" fill="#1E293B"/>
+  <text x="670" y="1690" font-family="monospace" font-size="11" fill="#94A3B8" text-anchor="middle">Surface</text>
+  <text x="670" y="1705" font-family="monospace" font-size="10" fill="#64748B" text-anchor="middle">#1E293B</text>
+  
+  <rect x="740" y="1610" width="100" height="60" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="790" y="1690" font-family="monospace" font-size="11" fill="#94A3B8" text-anchor="middle">Light BG</text>
+  <text x="790" y="1705" font-family="monospace" font-size="10" fill="#64748B" text-anchor="middle">#FFFFFF</text>
+  
+  <!-- ==================== -->
+  <!-- SECTION 8: USAGE GUIDELINES -->
+  <!-- ==================== -->
+  <text x="100" y="1770" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#F59E0B">07. USAGE GUIDELINES</text>
+  <line x1="100" y1="1785" x2="1100" y2="1785" stroke="#334155" stroke-width="1"/>
+  
+  <rect x="100" y="1810" width="500" height="320" rx="12" fill="#1E293B"/>
+  
+  <!-- Do's -->
+  <text x="130" y="1850" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#10B981">✓ DO</text>
+  
+  <text x="130" y="1885" font-family="system-ui, sans-serif" font-size="13" fill="#94A3B8">• Use the logo on dark or light backgrounds with sufficient contrast</text>
+  <text x="130" y="1910" font-family="system-ui, sans-serif" font-size="13" fill="#94A3B8">• Maintain clear space equal to the height of one hex node</text>
+  <text x="130" y="1935" font-family="system-ui, sans-serif" font-size="13" fill="#94A3B8">• Use the simplified icon for sizes below 32px</text>
+  <text x="130" y="1960" font-family="system-ui, sans-serif" font-size="13" fill="#94A3B8">• Use monochrome version on busy backgrounds</text>
+  <text x="130" y="1985" font-family="system-ui, sans-serif" font-size="13" fill="#94A3B8">• Scale proportionally</text>
+  
+  <!-- Don'ts -->
+  <text x="130" y="2030" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#EF4444">✗ DON'T</text>
+  
+  <text x="130" y="2065" font-family="system-ui, sans-serif" font-size="13" fill="#94A3B8">• Stretch or distort the logo</text>
+  <text x="130" y="2090" font-family="system-ui, sans-serif" font-size="13" fill="#94A3B8">• Change the logo colors outside the brand palette</text>
+  <text x="130" y="2115" font-family="system-ui, sans-serif" font-size="13" fill="#94A3B8">• Add shadows, outlines, or effects</text>
+  
+  <!-- Minimum Size -->
+  <rect x="620" y="1810" width="480" height="320" rx="12" fill="#1E293B"/>
+  
+  <text x="650" y="1850" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#F8FAFC">Minimum Sizes</text>
+  
+  <text x="650" y="1890" font-family="system-ui, sans-serif" font-size="13" fill="#94A3B8">Full Logo (Horizontal):</text>
+  <text x="850" y="1890" font-family="monospace" font-size="13" fill="#F8FAFC">120px width</text>
+  
+  <text x="650" y="1920" font-family="system-ui, sans-serif" font-size="13" fill="#94A3B8">Stacked Logo:</text>
+  <text x="850" y="1920" font-family="monospace" font-size="13" fill="#F8FAFC">80px width</text>
+  
+  <text x="650" y="1950" font-family="system-ui, sans-serif" font-size="13" fill="#94A3B8">Icon Only:</text>
+  <text x="850" y="1950" font-family="monospace" font-size="13" fill="#F8FAFC">24px</text>
+  
+  <text x="650" y="1980" font-family="system-ui, sans-serif" font-size="13" fill="#94A3B8">Favicon:</text>
+  <text x="850" y="1980" font-family="monospace" font-size="13" fill="#F8FAFC">16px (simplified)</text>
+  
+  <text x="650" y="2030" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="#F8FAFC">Clear Space</text>
+  <text x="650" y="2065" font-family="system-ui, sans-serif" font-size="13" fill="#94A3B8">Minimum padding around logo:</text>
+  <text x="650" y="2090" font-family="system-ui, sans-serif" font-size="13" fill="#F8FAFC">Height of one hexagonal node (≈15% of icon height)</text>
+  
+  <!-- ==================== -->
+  <!-- SECTION 9: SYMBOLISM -->
+  <!-- ==================== -->
+  <text x="100" y="2190" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#F59E0B">08. SYMBOLISM &amp; MEANING</text>
+  <line x1="100" y1="2205" x2="1100" y2="2205" stroke="#334155" stroke-width="1"/>
+  
+  <rect x="100" y="2230" width="1000" height="120" rx="12" fill="#1E293B"/>
+  
+  <text x="150" y="2270" font-family="system-ui, sans-serif" font-size="14" fill="#6366F1">●</text>
+  <text x="170" y="2270" font-family="system-ui, sans-serif" font-size="14" fill="#F8FAFC" font-weight="600">6 Outer Nodes</text>
+  <text x="170" y="2290" font-family="system-ui, sans-serif" font-size="13" fill="#94A3B8">Individual memories, context fragments, team knowledge</text>
+  
+  <text x="450" y="2270" font-family="system-ui, sans-serif" font-size="14" fill="#818CF8">—</text>
+  <text x="470" y="2270" font-family="system-ui, sans-serif" font-size="14" fill="#F8FAFC" font-weight="600">Connections</text>
+  <text x="470" y="2290" font-family="system-ui, sans-serif" font-size="13" fill="#94A3B8">Links between memories, context relationships</text>
+  
+  <text x="750" y="2270" font-family="system-ui, sans-serif" font-size="14" fill="#F59E0B">●</text>
+  <text x="770" y="2270" font-family="system-ui, sans-serif" font-size="14" fill="#F8FAFC" font-weight="600">Golden Core</text>
+  <text x="770" y="2290" font-family="system-ui, sans-serif" font-size="13" fill="#94A3B8">"Diwa" (soul) — persistent truth, central intelligence</text>
+  
+  <text x="150" y="2330" font-family="system-ui, sans-serif" font-size="14" fill="#A5B4FC">⬡</text>
+  <text x="170" y="2330" font-family="system-ui, sans-serif" font-size="14" fill="#F8FAFC" font-weight="600">Hexagonal Shape</text>
+  <text x="170" y="2350" font-family="system-ui, sans-serif" font-size="13" fill="#94A3B8">Efficiency (honeycomb), natural structure, developer-friendly</text>
+  
+  <!-- ==================== -->
+  <!-- FOOTER -->
+  <!-- ==================== -->
+  <rect x="0" y="2360" width="1200" height="40" fill="#1E293B"/>
+  <text x="600" y="2385" font-family="system-ui, sans-serif" font-size="12" fill="#64748B" text-anchor="middle">DIWA Brand Package v1.0 • B4 Hexagonal Lattice • January 2026 • diwa.one • Open Source from the Philippines 🇵🇭</text>
+</svg>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4F46E5"/>
+      <stop offset="100%" style="stop-color:#4338CA"/>
+    </linearGradient>
+    <linearGradient id="goldAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FBBF24"/>
+      <stop offset="100%" style="stop-color:#F59E0B"/>
+    </linearGradient>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Rounded Square Background -->
+  <rect x="0" y="0" width="512" height="512" rx="102" fill="url(#bgGradient)"/>
+  
+  <!-- B4 Hexagonal Lattice Icon Centered -->
+  <g transform="translate(106, 106)">
+    <!-- Hex outer connections -->
+    <line x1="150" y1="30" x2="255" y2="90" stroke="#818CF8" stroke-width="14" opacity="0.5"/>
+    <line x1="255" y1="90" x2="255" y2="210" stroke="#818CF8" stroke-width="14" opacity="0.5"/>
+    <line x1="255" y1="210" x2="150" y2="270" stroke="#A5B4FC" stroke-width="14" opacity="0.6"/>
+    <line x1="150" y1="270" x2="45" y2="210" stroke="#A5B4FC" stroke-width="14" opacity="0.6"/>
+    <line x1="45" y1="210" x2="45" y2="90" stroke="#818CF8" stroke-width="14" opacity="0.5"/>
+    <line x1="45" y1="90" x2="150" y2="30" stroke="#818CF8" stroke-width="14" opacity="0.5"/>
+    
+    <!-- Center connections -->
+    <line x1="150" y1="150" x2="150" y2="30" stroke="#C7D2FE" stroke-width="8" opacity="0.4"/>
+    <line x1="150" y1="150" x2="255" y2="90" stroke="#C7D2FE" stroke-width="8" opacity="0.4"/>
+    <line x1="150" y1="150" x2="255" y2="210" stroke="#C7D2FE" stroke-width="8" opacity="0.4"/>
+    <line x1="150" y1="150" x2="150" y2="270" stroke="#C7D2FE" stroke-width="8" opacity="0.4"/>
+    <line x1="150" y1="150" x2="45" y2="210" stroke="#C7D2FE" stroke-width="8" opacity="0.4"/>
+    <line x1="150" y1="150" x2="45" y2="90" stroke="#C7D2FE" stroke-width="8" opacity="0.4"/>
+    
+    <!-- Hex nodes -->
+    <circle cx="150" cy="30" r="24" fill="#A5B4FC"/>
+    <circle cx="255" cy="90" r="24" fill="#A5B4FC"/>
+    <circle cx="255" cy="210" r="24" fill="#A5B4FC"/>
+    <circle cx="150" cy="270" r="24" fill="#A5B4FC"/>
+    <circle cx="45" cy="210" r="24" fill="#A5B4FC"/>
+    <circle cx="45" cy="90" r="24" fill="#A5B4FC"/>
+    
+    <!-- Central core (Diwa) -->
+    <circle cx="150" cy="150" r="50" fill="url(#goldAccent)" filter="url(#glow)"/>
+    <circle cx="150" cy="150" r="25" fill="#FEF3C7"/>
+  </g>
+</svg>
