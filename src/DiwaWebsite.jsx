@@ -1117,6 +1117,28 @@ const PricingPage = () => {
 
 // ==================== ENTERPRISE PAGE ====================
 const EnterprisePage = () => {
+  const [formStatus, setFormStatus] = useState('idle');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormStatus('loading');
+
+    const formData = new FormData(e.target);
+
+    fetch('/', {
+      method: 'POST',
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString()
+    })
+      .then(() => {
+        setFormStatus('success');
+      })
+      .catch((error) => {
+        console.error('Submission failed:', error);
+        setFormStatus('error');
+      });
+  };
+
   const capabilities = [
     {
       icon: BarChart3,
@@ -1183,38 +1205,73 @@ const EnterprisePage = () => {
 
           <div className="max-w-2xl mx-auto bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-slate-700/50 rounded-2xl p-8 sm:p-12">
             <h2 className="text-2xl font-bold text-white mb-6 text-center">Talk to Our Team</h2>
-            <form className="space-y-4">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  placeholder="First name"
-                  className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
-                />
-                <input
-                  type="text"
-                  placeholder="Last name"
-                  className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
-                />
+
+            {formStatus === 'success' ? (
+              <div className="text-center py-12 animate-fade-in">
+                <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Check className="w-8 h-8 text-green-500" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">Message Sent</h3>
+                <p className="text-slate-400">
+                  Thanks for reaching out. Our enterprise team will be in touch shortly.
+                </p>
+                <button
+                  onClick={() => setFormStatus('idle')}
+                  className="mt-8 px-6 py-2 bg-slate-800 hover:bg-slate-700 rounded-lg text-white text-sm transition-colors"
+                >
+                  Send another message
+                </button>
               </div>
-              <input
-                type="email"
-                placeholder="Work email"
-                className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
-              />
-              <input
-                type="text"
-                placeholder="Company"
-                className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
-              />
-              <textarea
-                placeholder="Tell us about your needs"
-                rows={4}
-                className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 resize-none"
-              />
-              <button className="w-full py-4 bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-indigo-500/25">
-                Contact Sales
-              </button>
-            </form>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <input type="hidden" name="form-name" value="enterprise-contact" />
+
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    name="first-name"
+                    placeholder="First name"
+                    required
+                    className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
+                  />
+                  <input
+                    type="text"
+                    name="last-name"
+                    placeholder="Last name"
+                    required
+                    className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
+                  />
+                </div>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Work email"
+                  required
+                  className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
+                />
+                <input
+                  type="text"
+                  name="company"
+                  placeholder="Company"
+                  required
+                  className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
+                />
+                <textarea
+                  name="message"
+                  placeholder="Tell us about your needs"
+                  rows={4}
+                  required
+                  className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 resize-none"
+                />
+                <button
+                  type="submit"
+                  disabled={formStatus === 'loading'}
+                  className="w-full py-4 bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-indigo-500/25 disabled:opacity-70 disabled:cursor-not-allowed"
+                >
+                  {formStatus === 'loading' ? 'Sending...' : 'Contact Sales'}
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </section>
