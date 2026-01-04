@@ -1,16 +1,71 @@
-# React + Vite
+# Diwa Web (v1.0)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**The official website for the Diwa Ecosystem.**
+Live at: [https://diwa.one](https://diwa.one) (Pending DNS)
 
-Currently, two official plugins are available:
+> "Ang wika ang kaluluwa ng bansa" — Language is the soul of a nation.
+> **Memory is the soul of AI systems.**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌟 The Diwa Ecosystem
 
-## React Compiler
+Diwa provides persistent memory infrastructure for AI-powered development. It works with any MCP-compatible tool (Claude, Cursor, Windsurf) to solve the "amnesia problem" of modern AI coding assistants.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Core Products
 
-## Expanding the ESLint configuration
+1.  **DIWA (The Foundation)**
+    *   **Status:** Available Now (Open Source / MIT)
+    *   **Description:** The core memory infrastructure. A self-hosted Model Context Protocol (MCP) server that gives your AI tools persistent memory. Works across sessions, restarts, and tools.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2.  **Command Center (TANAW)**
+    *   **Status:** Coming Q2 2026
+    *   **Description:** A visual dashboard to "see" your AI's memory. Manage project contexts, review decision logs, and curate team knowledge graphically.
+
+3.  **Agent Runtime (SINAG)**
+    *   **Status:** Coming Q3 2026
+    *   **Description:** A BEAM-inspired runtime for autonomous AI agents. Run persistent agents with built-in supervision trees, fault tolerance, and automatic recovery.
+
+4.  **Enterprise Platform**
+    *   **Status:** Coming Q4 2026
+    *   **Description:** The OS-level "kernel" for AI. Provides enterprise-grade security, SSO/SAML, audit logs, and global state management for large organizations.
+
+---
+
+## 🛠 Tech Stack
+
+This website is built with:
+-   **Framework:** React 19 + Vite
+-   **Styling:** Tailwind CSS 4.0 (Vanilla CSS configuration)
+-   **Icons:** Lucide React
+-   **Deployment:** Netlify (SPA Routing configured)
+
+## 🚀 Running Locally
+
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/diwahq/diwa-web.git
+    cd diwa-web
+    ```
+
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
+
+3.  **Start the development server**
+    ```bash
+    npm run dev
+    ```
+
+## 📦 Deployment
+
+The project is configured for **Netlify** with a `netlify.toml` file to handle SPA routing (redirecting `/*` to `/index.html`).
+
+**Netlify Forms** are used for:
+-   **Waitlist:** Captures email, role, and team size.
+-   **Enterprise Contact:** Captures detailed lead information.
+
+These forms are defined in `index.html` (hidden) and submitted via `fetch` in the React application.
+
+---
+
+© 2026 Diwa. Built in the Philippines, for the world.
