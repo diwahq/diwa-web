@@ -228,7 +228,7 @@ const Navigation = ({ currentPage, setCurrentPage, onJoinWaitlist }) => {
                 className="w-10 h-10 transition-opacity hover:opacity-90"
               />
               <div className="absolute inset-0 flex items-center justify-center">
-                <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-amber-400 opacity-75"></span>
+                <span className="animate-ping absolute inline-flex h-2.5 w-2.5 rounded-full bg-amber-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-500 shadow-[0_0_10px_rgba(245,158,11,0.5)]"></span>
               </div>
             </div>
@@ -790,8 +790,8 @@ const Footer = ({ setCurrentPage }) => {
                   className="w-8 h-8"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="animate-ping absolute inline-flex h-1.5 w-1.5 rounded-full bg-amber-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.5)]"></span>
+                  <span className="animate-ping absolute inline-flex h-2.5 w-2.5 rounded-full bg-amber-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.5)]"></span>
                 </div>
               </div>
               <span className="text-xl font-bold text-white tracking-tight">DIWA</span>
