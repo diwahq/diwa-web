@@ -221,11 +221,19 @@ const Navigation = ({ currentPage, setCurrentPage, onJoinWaitlist }) => {
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <button onClick={() => setCurrentPage('home')} className="flex items-center gap-3 group">
-            <img
-              src="/diwa-logo-horizontal-dark.svg"
-              alt="DIWA"
-              className="h-8 w-auto transition-opacity hover:opacity-90"
-            />
+            <div className="relative w-10 h-10 flex items-center justify-center">
+              <img
+                src="/diwa-icon-transparent.svg"
+                alt="DIWA"
+                className="w-10 h-10 transition-opacity hover:opacity-90"
+              />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-2.5 h-2.5 bg-amber-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(245,158,11,0.5)]" />
+              </div>
+            </div>
+            <span className="text-2xl font-bold bg-gradient-to-r from-white via-indigo-200 to-amber-200 bg-clip-text text-transparent tracking-tight">
+              DIWA
+            </span>
           </button>
 
           <div className="hidden md:flex items-center gap-8">
@@ -773,12 +781,18 @@ const Footer = ({ setCurrentPage }) => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div className="md:col-span-1">
-            <button onClick={() => setCurrentPage('home')} className="block mb-6 cursor-pointer transition-opacity hover:opacity-90">
-              <img
-                src="/diwa-logo-horizontal-dark.svg"
-                alt="DIWA"
-                className="h-8 w-auto"
-              />
+            <button onClick={() => setCurrentPage('home')} className="flex items-center gap-3 mb-6 group cursor-pointer transition-opacity hover:opacity-90">
+              <div className="relative w-8 h-8 flex items-center justify-center">
+                <img
+                  src="/diwa-icon-transparent.svg"
+                  alt="DIWA"
+                  className="w-8 h-8"
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-2 h-2 bg-amber-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(245,158,11,0.5)]" />
+                </div>
+              </div>
+              <span className="text-xl font-bold text-white tracking-tight">DIWA</span>
             </button>
             <p className="text-sm text-slate-400 mb-4">
               Persistent memory infrastructure for AI-powered development.
