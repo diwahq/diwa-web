@@ -13,13 +13,14 @@
   <div id="root"></div>
 
   <!-- Netlify Form Definition (Hidden) -->
-  <form name="waitlist" netlify netlify-honeypot="bot-field" hidden>
+  <!-- Netlify Form Definition (Hidden) -->
+  <form name="waitlist" data-netlify="true" netlify-honeypot="bot-field" method="POST" style="display: none;">
     <input type="text" name="email" />
     <input type="text" name="role" />
   </form>
 
   <!-- Enterprise Contact Form (Hidden) -->
-  <form name="enterprise-contact" netlify netlify-honeypot="bot-field" hidden>
+  <form name="enterprise-contact" data-netlify="true" netlify-honeypot="bot-field" method="POST" style="display: none;">
     <input type="text" name="first-name" />
     <input type="text" name="last-name" />
     <input type="email" name="email" />
