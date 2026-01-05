@@ -448,7 +448,7 @@ const SolutionSection = () => {
     {
       icon: Layers,
       title: 'Universal',
-      description: 'Works with any MCP-compatible tool. One memory layer for all your AI assistants.',
+      description: 'One source of truth for your entire AI stack. Works across tools and teams.',
       gradient: 'from-indigo-400 to-amber-500',
     },
     {
