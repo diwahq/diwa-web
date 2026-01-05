@@ -253,7 +253,7 @@ const Navigation = ({ currentPage, setCurrentPage, onJoinWaitlist }) => {
           </div>
 
           <div className="hidden md:flex items-center gap-4">
-            <a href="https://github.com/diwahq/diwa" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 text-sm text-slate-300 hover:text-white transition-colors">
+            <a href="https://github.com/diwahq/diwa-agent" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 text-sm text-slate-300 hover:text-white transition-colors">
               <Github className="w-4 h-4" />
               <span>GitHub</span>
             </a>
@@ -344,7 +344,7 @@ const HeroSection = ({ onJoinWaitlist }) => {
               Get Started Free
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
-            <a href="https://github.com/diwahq/diwa" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 px-8 py-4 bg-slate-800/50 hover:bg-slate-700/50 border border-slate-700 hover:border-slate-600 text-white font-semibold rounded-xl transition-all duration-300 backdrop-blur-sm">
+            <a href="https://github.com/diwahq/diwa-agent" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 px-8 py-4 bg-slate-800/50 hover:bg-slate-700/50 border border-slate-700 hover:border-slate-600 text-white font-semibold rounded-xl transition-all duration-300 backdrop-blur-sm">
               <Star className="w-5 h-5 text-amber-500" />
               Star on GitHub
             </a>
@@ -819,7 +819,7 @@ const Footer = ({ setCurrentPage }) => {
             <ul className="space-y-2">
               <li><button onClick={() => setCurrentPage('about')} className="text-sm text-slate-400 hover:text-white transition-colors">About</button></li>
               <li><a href="/blog" className="text-sm text-slate-400 hover:text-white transition-colors">Blog</a></li>
-              <li><a href="https://github.com/diwahq" className="text-sm text-slate-400 hover:text-white transition-colors">GitHub</a></li>
+              <li><a href="https://github.com/diwahq/diwa-agent" className="text-sm text-slate-400 hover:text-white transition-colors">GitHub</a></li>
             </ul>
           </div>
 
@@ -837,7 +837,7 @@ const Footer = ({ setCurrentPage }) => {
             © 2026 DIWA. Built in the Philippines, for the world.
           </p>
           <div className="flex items-center gap-4">
-            <a href="https://github.com/diwahq" className="text-slate-500 hover:text-white transition-colors">
+            <a href="https://github.com/diwahq/diwa-agent" className="text-slate-500 hover:text-white transition-colors">
               <Github className="w-5 h-5" />
             </a>
           </div>
@@ -1359,9 +1359,9 @@ const AboutPage = () => {
                   <MessageSquare className="w-5 h-5" />
                   hello@diwa.one
                 </a>
-                <a href="https://github.com/diwahq" className="flex items-center gap-2 text-indigo-400 hover:text-indigo-300 transition-colors">
+                <a href="https://github.com/diwahq/diwa-agent" className="flex items-center gap-2 text-indigo-400 hover:text-indigo-300 transition-colors">
                   <Github className="w-5 h-5" />
-                  github.com/diwahq
+                  github.com/diwahq/diwa-agent
                 </a>
               </div>
             </div>
