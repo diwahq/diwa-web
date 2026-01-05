@@ -1,7 +1,7 @@
 # Diwa (v1.0)
 
 **The official website for the Diwa Ecosystem.**
-Live at: [https://diwa.one](https://diwa.one) (Pending DNS)
+Live at: [https://diwa.one](https://diwa.one)
 
 > "Ang wika ang kaluluwa ng bansa" — Language is the soul of a nation.
 > **Memory is the soul of AI systems.**
