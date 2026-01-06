@@ -257,12 +257,14 @@ const Navigation = ({ currentPage, setCurrentPage, onJoinWaitlist }) => {
               <Github className="w-4 h-4" />
               <span>GitHub</span>
             </a>
-            <button
-              onClick={onJoinWaitlist}
+            <a
+              href="https://github.com/diwahq/diwa-agent"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white text-sm font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:-translate-y-0.5"
             >
               Get Started
-            </button>
+            </a>
           </div>
 
           <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden p-2 text-slate-400 hover:text-white">
@@ -336,14 +338,16 @@ const HeroSection = ({ onJoinWaitlist }) => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            <button
-              onClick={onJoinWaitlist}
+            <a
+              href="https://github.com/diwahq/diwa-agent"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-semibold rounded-xl transition-all duration-300 shadow-2xl shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:-translate-y-1"
             >
               <Play className="w-5 h-5" />
               Get Started Free
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
+            </a>
             <a href="https://github.com/diwahq/diwa-agent" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-2 px-8 py-4 bg-slate-800/50 hover:bg-slate-700/50 border border-slate-700 hover:border-slate-600 text-white font-semibold rounded-xl transition-all duration-300 backdrop-blur-sm">
               <Star className="w-5 h-5 text-amber-500" />
               Star on GitHub
@@ -647,6 +651,7 @@ const EcosystemTeaser = ({ setCurrentPage }) => {
 
 // Pricing Preview
 const PricingPreview = ({ setCurrentPage, onJoinWaitlist }) => {
+  const openGithub = () => window.open('https://github.com/diwahq/diwa-agent', '_blank');
   const tiers = [
     {
       name: 'Community',
@@ -716,13 +721,21 @@ const PricingPreview = ({ setCurrentPage, onJoinWaitlist }) => {
               </ul>
 
               <button
-                onClick={onJoinWaitlist}
+                onClick={() => {
+                  if (tier.price === 'Custom') {
+                    setCurrentPage('enterprise');
+                  } else if (tier.price === 'Free') {
+                    openGithub();
+                  } else {
+                    onJoinWaitlist();
+                  }
+                }}
                 className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 ${tier.highlighted
                   ? 'bg-gradient-to-r from-indigo-600 to-indigo-500 text-white hover:from-indigo-500 hover:to-indigo-400'
                   : 'bg-slate-700/50 text-white hover:bg-slate-700'
                   }`}
               >
-                {tier.price === 'Custom' ? 'Contact Sales' : 'Join Waitlist'}
+                {tier.price === 'Custom' ? 'Contact Sales' : tier.price === 'Free' ? 'Get Started' : 'Join Waitlist'}
               </button>
             </div>
           ))}
@@ -757,14 +770,16 @@ const CTASection = ({ onJoinWaitlist }) => {
           Join developers who are building smarter with persistent AI context. Get started in under 5 minutes.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button
-            onClick={onJoinWaitlist}
+          <a
+            href="https://github.com/diwahq/diwa-agent"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-semibold rounded-xl transition-all duration-300 shadow-2xl shadow-indigo-500/30 hover:shadow-indigo-500/50 hover:-translate-y-1"
           >
             <Terminal className="w-5 h-5" />
             Get Started Free
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
+          </a>
           <a href="https://docs.diwa.one" className="flex items-center gap-2 px-8 py-4 text-slate-300 hover:text-white font-medium transition-colors">
             Read the Docs
             <ExternalLink className="w-4 h-4" />
@@ -848,7 +863,7 @@ const Footer = ({ setCurrentPage }) => {
 };
 
 // ==================== PLATFORM PAGE ====================
-const PlatformPage = () => {
+const PlatformPage = ({ onJoinWaitlist }) => {
   const stack = [
     {
       plane: 'Cloud Plane',
@@ -982,7 +997,10 @@ const PlatformPage = () => {
                       <div className="flex items-center gap-4">
                         <span className="text-xs text-slate-500">License: {product.license}</span>
                         {product.available && (
-                          <button className="text-xs text-indigo-400 hover:text-indigo-300 font-medium">
+                          <button
+                            onClick={onJoinWaitlist}
+                            className="text-xs text-indigo-400 hover:text-indigo-300 font-medium"
+                          >
                             Get Started →
                           </button>
                         )}
@@ -1000,7 +1018,8 @@ const PlatformPage = () => {
 };
 
 // ==================== PRICING PAGE ====================
-const PricingPage = () => {
+const PricingPage = ({ setCurrentPage, onJoinWaitlist }) => {
+  const openGithub = () => window.open('https://github.com/diwahq/diwa-agent', '_blank');
   const tiers = [
     {
       name: 'Community',
@@ -1107,6 +1126,15 @@ const PricingPage = () => {
                 </ul>
 
                 <button
+                  onClick={() => {
+                    if (tier.cta === 'Contact Sales') {
+                      setCurrentPage('enterprise');
+                    } else if (tier.cta === 'Get Started Free') {
+                      openGithub();
+                    } else {
+                      onJoinWaitlist();
+                    }
+                  }}
                   className={`w-full py-4 rounded-xl font-semibold transition-all duration-300 ${tier.highlighted
                     ? 'bg-gradient-to-r from-indigo-600 to-indigo-500 text-white hover:from-indigo-500 hover:to-indigo-400 shadow-lg shadow-indigo-500/25'
                     : 'bg-slate-700/50 text-white hover:bg-slate-700'
@@ -1405,10 +1433,9 @@ export default function DiwaWebsite() {
   const renderPage = () => {
     switch (currentPage) {
       case 'platform':
-        return <PlatformPage />;
+        return <PlatformPage onJoinWaitlist={openWaitlist} />;
       case 'pricing':
-        // Pass openWaitlist if PricingPage needs it (assuming checking Home only for now)
-        return <PricingPage />;
+        return <PricingPage setCurrentPage={setCurrentPage} onJoinWaitlist={openWaitlist} />;
       case 'enterprise':
         return <EnterprisePage />;
       case 'about':
