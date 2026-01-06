@@ -283,6 +283,23 @@ const Navigation = ({ currentPage, setCurrentPage, onJoinWaitlist }) => {
                 {item.label}
               </button>
             ))}
+            <a
+              href="https://github.com/diwahq/diwa-agent"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full text-left px-4 py-2 text-slate-400 hover:bg-slate-800 hover:text-white rounded-lg transition-colors flex items-center gap-2"
+            >
+              <Github className="w-4 h-4" />
+              GitHub
+            </a>
+            <a
+              href="https://github.com/diwahq/diwa-agent"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full text-center px-4 py-3 mt-4 bg-gradient-to-r from-indigo-600 to-indigo-500 text-white font-semibold rounded-lg shadow-lg shadow-indigo-500/25"
+            >
+              Get Started
+            </a>
           </div>
         )}
       </div>
